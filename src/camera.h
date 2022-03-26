@@ -3,6 +3,7 @@
 #define CAMERA_H_
 
 #include <Arduino.h>
+
 #include "esp_camera.h"
 #include "esp_http_server.h"
 #include "fb_gfx.h"

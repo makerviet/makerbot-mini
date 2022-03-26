@@ -10,7 +10,7 @@
 
 // Replace with your network credentials
 String chipId = String((uint32_t)ESP.getEfuseMac(), HEX);
-const char* ssid = (String("MakerbotMini-") + chipId).c_str();
+String ssid = "MBotMini-" + chipId;
 const char* password = "makerbotisfun";
 
 /* Soft AP network parameters */
@@ -62,7 +62,7 @@ void setup() {
   }
 
   WiFi.softAPConfig(apIP, apIP, netMsk);
-  WiFi.softAP(ssid, password);
+  WiFi.softAP(ssid.c_str(), password);
   delay(500);
   Serial.print("AP IP address: ");
   Serial.println(WiFi.softAPIP());

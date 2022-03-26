@@ -5,18 +5,14 @@
 
 Để chạy được các ví dụ demo, các bạn cần có các linh kiện phần cứng sau:
 
-- Mạch Makerbot để điều khiển động cơ, đọc cảm biến: <https://via.makerviet.org/vi/docs/hardware/design/>.
-- Module ESP32-CAM như một phần mở rộng của mạch Makerbot để đọc camera: <https://bit.ly/3fFHPOe>.
-- Khung xe robot tròn hoặc một khung xe tương đương có lắp động cơ 5V: <https://bit.ly/3plS8u8>.
+- Module ESP32-CAM.
+- Mạch MakerbotMini để điều khiển động cơ.
+- Khung xe robot tròn hoặc một khung xe tương đương có lắp động cơ 5V.
 - Các linh kiện khác: Pin, sạc, dây nối.
-
-Ở thiết kế cơ bản, chúng ta sẽ dùng ESP32-CAM để làm bộ phát WIFI. Máy tính điều khiển - Control Computer có thể được kết nối vào WIFI này, nhận hình ảnh từ camera. Thông qua WIFI của mạch ESP32-CAM, máy tính điều khiển cũng có thể kết nối tới mạch Makerbot để đọc các giá trị cảm biến và điều khiển động cơ. Mạch Makerbot sẽ hoạt động như một thiết bị client, bắt WIFI của ESP32-CAM, nhận lệnh từ máy tính truyền xuống và đồng thời truyền lại các giá trị cảm biến mà nó đọc được.
-
-![](images/connection_diagram.png)
 
 **Thông tin kết nối WIFI của mạch ESP32-Cam**
 
-- SSID: `MBotMini-<ID>`
+- SSID: `MBotMini-<ID>`, trong đó ID là mã phần cứng của ESP32-Cam.
 - Mật khẩu: `makerbotisfun`
 
 Các bạn có thể thay đổi thông tin này bằng cách sửa code và nạp lại firmware.
@@ -25,7 +21,7 @@ Các bạn có thể thay đổi thông tin này bằng cách sửa code và n�
 
 Trước tiên, chúng ta cần nạp firmware cho mạch Makerbot và module ESP32-CAM.
 
-**Nạp firmware với PlatformIO: Chúng tôi khuyến khích sử dụng PlatformIO cài đặt trên Visual Studio Code để thực hiện nạp firmware. Sau đó, các bạn có thể nạp firmware bằng cách dùng PlatformIO mở các folder sau, biên dịch và nạp code lên các mạch. Hướng dẫn cài đặt và sử dụng PlatformIO để nạp firmware các bạn có thể truy cập tại [đây](docs/Guide-PlatformIO-Windows-VSC2021.pdf).
+**Nạp firmware với PlatformIO: Chúng tôi khuyến khích sử dụng PlatformIO cài đặt trên Visual Studio Code để thực hiện nạp firmware. Sau đó, các bạn có thể nạp firmware bằng cách dùng PlatformIO mở các folder sau, biên dịch và nạp code lên các mạch. Hướng dẫn cài đặt và sử dụng PlatformIO để nạp firmware các bạn có thể truy cập tại [đây](docs/Guide-PlatformIO-Windows.pdf).
 
 Các bạn cần cài đặt thêm Driver CH340 khi sử dụng với Windows theo hướng dẫn tại đây: <https://www.arduined.eu/ch340-windows-10-driver-download/>.
 
@@ -35,7 +31,7 @@ Các bạn cần cài đặt thêm Driver CH340 khi sử dụng với Windows th
 
 ### 3. Kiểm tra tín hiệu hình ảnh từ ESP32-CAM
 
-Kết nối vào WIFI `VIA-MakerBot-01` và mở trình duyệt web, truy cập: [http://192.168.4.1](http://192.168.4.1) để xem hình ảnh thu được từ camera.
+Kết nối vào WIFI `MBotMini-<ID>` và mở trình duyệt web, truy cập: [http://192.168.4.1](http://192.168.4.1) để xem hình ảnh thu được từ camera.
 
 **Đọc camera từ ESP32-CAM bằng Python:**
 

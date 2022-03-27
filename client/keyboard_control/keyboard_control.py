@@ -7,7 +7,7 @@ pygame.display.set_caption('VIABot controller')
 window = pygame.display.set_mode((300, 300))
 clock = pygame.time.Clock()
 
-CONTROL_IP = "192.168.4.100"
+CONTROL_IP = "192.168.4.1"
 CONTROL_PORT = 9999
 sk = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, 0)
 sk.settimeout(3000)

@@ -3,16 +3,11 @@
 
 #include <stdio.h>
 
+#include "config.h"
 #include "driver/ledc.h"
 #include "esp_err.h"
 
 #define MOTOR_FREQ 5000  // PWM MOTOR_FREQ for DC motor should be within 5-20kHz
-
-#define MOTOR1_A 15
-#define MOTOR1_B 14
-
-#define MOTOR2_A 13
-#define MOTOR2_B 12
 
 #define PWM_CHANNEL1 LEDC_CHANNEL_2
 #define PWM_CHANNEL2 LEDC_CHANNEL_3

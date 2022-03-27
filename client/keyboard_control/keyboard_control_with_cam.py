@@ -44,26 +44,27 @@ while run:
 
     keys = pygame.key.get_pressed()
 
+    CONTROL_SPEED = 100
     color = (255, 0, 0)
     if keys[pygame.K_UP] or keys[ord('w')]:
         rect.x = origin_x
         rect.y = origin_y - 50
-        set_speed(80, 80)
+        set_speed(CONTROL_SPEED, CONTROL_SPEED)
         color = (0, 0, 255)
     elif keys[pygame.K_DOWN] or keys[ord('s')]:
         rect.x = origin_x
         rect.y = origin_y + 50
-        set_speed(-80, -80)
+        set_speed(-CONTROL_SPEED, -CONTROL_SPEED)
         color = (0, 0, 255)
     elif keys[pygame.K_LEFT] or keys[ord('a')]:
         rect.x = origin_x - 50
         rect.y = origin_y
-        set_speed(-80, 80)
+        set_speed(-CONTROL_SPEED, CONTROL_SPEED)
         color = (0, 0, 255)
     elif keys[pygame.K_RIGHT] or keys[ord('d')]:
         rect.x = origin_x + 50
         rect.y = origin_y
-        set_speed(80, -80)
+        set_speed(CONTROL_SPEED, -CONTROL_SPEED)
         color = (0, 0, 255)
     else:
         rect.x = origin_x
